@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>经纪端 · 正午阳光选角系统</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="agent">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="经纪端导航">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">午</div>
+          <div>
+            <p class="eyebrow">Agent Portal</p>
+            <h1>经纪端</h1>
+          </div>
+        </div>
+        <nav class="nav-list portal-nav">
+          <button class="nav-item active" type="button" data-portal-tab="agentHome"><span aria-hidden="true">⌂</span><span>工作台</span></button>
+          <button class="nav-item" type="button" data-portal-tab="agentTalents"><span aria-hidden="true">◎</span><span>旗下演员</span></button>
+          <button class="nav-item" type="button" data-portal-tab="agentCompletion"><span aria-hidden="true">▧</span><span>资料完整度</span></button>
+          <button class="nav-item" type="button" data-portal-tab="agentInvitations"><span aria-hidden="true">◇</span><span>项目邀约</span></button>
+          <button class="nav-item" type="button" data-portal-tab="agentAuditions"><span aria-hidden="true">◫</span><span>试镜任务</span></button>
+          <button class="nav-item" type="button" data-portal-tab="agentSchedules"><span aria-hidden="true">◴</span><span>档期管理</span></button>
+          <button class="nav-item" type="button" data-portal-tab="agentSubmissions"><span aria-hidden="true">⇧</span><span>提交记录</span></button>
+          <button class="nav-item" type="button" data-portal-tab="agentMessages"><span aria-hidden="true">▤</span><span>沟通消息</span></button>
+        </nav>
+        <section class="project-card">
+          <p class="eyebrow">经纪端规则</p>
+          <h2>批量管理</h2>
+          <p>经纪端可替旗下演员维护资料和提交任务，但不可查看内部判断。</p>
+          <a class="sidebar-link" href="login.html">切换身份</a>
+        </section>
+      </aside>
+      <main class="workspace portal-workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Agent Workspace</p>
+            <h2>经纪工作台</h2>
+            <p class="topbar-copy">集中处理旗下演员资料、档期、邀约和试镜提交。</p>
+          </div>
+        </header>
+        <div id="agentPortal"></div>
+      </main>
+    </div>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>登录 · 正午阳光选角系统</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="login-page" data-page="login">
+    <main class="login-shell">
+      <section class="login-panel">
+        <div class="brand login-brand">
+          <div class="brand-mark" aria-hidden="true">午</div>
+          <div>
+            <p class="eyebrow">Noon Casting</p>
+            <h1>正午阳光选角系统</h1>
+          </div>
+        </div>
+        <div class="login-copy">
+          <p class="eyebrow">Role Entry</p>
+          <h2>进入选角系统</h2>
+          <p>选择一个身份查看对应工作台。演示数据为虚构，本地保存，不含真实演员隐私。</p>
+        </div>
+        <div class="role-entry-grid">
+          <button class="role-entry-card" type="button" data-login-role="admin">
+            <span class="entry-icon" aria-hidden="true">▤</span>
+            <strong>内部后台</strong>
+            <small>项目、角色、候选池、试镜评价、组合测试、阵容方案与风险管理。</small>
+          </button>
+          <button class="role-entry-card" type="button" data-login-role="actor">
+            <span class="entry-icon" aria-hidden="true">◎</span>
+            <strong>演员端</strong>
+            <small>建档、照片视频资料、档期反馈、试镜任务和提交记录。</small>
+          </button>
+          <button class="role-entry-card" type="button" data-login-role="agent">
+            <span class="entry-icon" aria-hidden="true">◇</span>
+            <strong>经纪端</strong>
+            <small>旗下演员、项目邀约、批量资料维护、档期确认和试镜提交。</small>
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

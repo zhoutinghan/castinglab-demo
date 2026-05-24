@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>演员端 · 正午阳光选角系统</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="actor">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="演员端导航">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">午</div>
+          <div>
+            <p class="eyebrow">Actor Portal</p>
+            <h1>演员端</h1>
+          </div>
+        </div>
+        <nav class="nav-list portal-nav">
+          <button class="nav-item active" type="button" data-portal-tab="actorHome"><span aria-hidden="true">⌂</span><span>我的首页</span></button>
+          <button class="nav-item" type="button" data-portal-tab="actorProfile"><span aria-hidden="true">◎</span><span>我的档案</span></button>
+          <button class="nav-item" type="button" data-portal-tab="actorPhotos"><span aria-hidden="true">▧</span><span>照片资料</span></button>
+          <button class="nav-item" type="button" data-portal-tab="actorVideos"><span aria-hidden="true">▻</span><span>视频资料</span></button>
+          <button class="nav-item" type="button" data-portal-tab="actorWorks"><span aria-hidden="true">▤</span><span>作品经历</span></button>
+          <button class="nav-item" type="button" data-portal-tab="actorSkills"><span aria-hidden="true">◇</span><span>技能与方言</span></button>
+          <button class="nav-item" type="button" data-portal-tab="actorSchedule"><span aria-hidden="true">◴</span><span>档期管理</span></button>
+          <button class="nav-item" type="button" data-portal-tab="actorAuditions"><span aria-hidden="true">◫</span><span>试镜任务</span></button>
+          <button class="nav-item" type="button" data-portal-tab="actorSubmissions"><span aria-hidden="true">⇧</span><span>提交记录</span></button>
+          <button class="nav-item" type="button" data-portal-tab="actorAuth"><span aria-hidden="true">□</span><span>授权管理</span></button>
+        </nav>
+        <section class="project-card">
+          <p class="eyebrow">外部端规则</p>
+          <h2>只展示任务信息</h2>
+          <p>演员端只展示资料、档期、任务、提交和授权信息，后台决策内容不会出现在外部端。</p>
+          <a class="sidebar-link" href="login.html">切换身份</a>
+        </section>
+      </aside>
+      <main class="workspace portal-workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Actor Workspace</p>
+            <h2>我的选角任务</h2>
+            <p class="topbar-copy">维护个人资料、确认档期并提交试镜材料。</p>
+          </div>
+        </header>
+        <div id="actorPortal"></div>
+      </main>
+    </div>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

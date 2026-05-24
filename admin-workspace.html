@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>内部后台 · 正午阳光选角系统</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="admin">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="内部后台导航">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">午</div>
+          <div>
+            <p class="eyebrow">Admin Console</p>
+            <h1>正午阳光选角系统</h1>
+          </div>
+        </div>
+
+        <nav class="nav-list admin-nav">
+          <button class="nav-item active" type="button" data-admin-anchor="overview" title="总览"><span aria-hidden="true">⌂</span><span>总览</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="projectCenter" title="项目中心"><span aria-hidden="true">▦</span><span>项目中心</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="roles" title="角色需求"><span aria-hidden="true">◇</span><span>角色需求</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="talents" title="演员库"><span aria-hidden="true">◎</span><span>演员库</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="candidatePool" title="候选池"><span aria-hidden="true">◫</span><span>候选池</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="auditionManagement" title="试镜管理"><span aria-hidden="true">◴</span><span>试镜管理</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="combinationPanel" title="组合测试"><span aria-hidden="true">⇄</span><span>组合测试</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="castPlanPanel" title="阵容方案"><span aria-hidden="true">▥</span><span>阵容方案</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="riskPanel" title="风险管理"><span aria-hidden="true">△</span><span>风险管理</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="reportPanel" title="选角报告"><span aria-hidden="true">▤</span><span>选角报告</span></button>
+          <button class="nav-item" type="button" data-admin-anchor="archivePanel" title="项目归档"><span aria-hidden="true">□</span><span>项目归档</span></button>
+        </nav>
+
+        <section class="project-card" aria-label="当前项目">
+          <p class="eyebrow">当前项目</p>
+          <h2>《江河人间》</h2>
+          <p>年代现实主义剧集 · 项目选角中</p>
+          <div class="progress-line" aria-label="选角进度 64%">
+            <span style="width: 64%"></span>
+          </div>
+          <div class="project-meta">
+            <span>16 个角色</span>
+            <span>64%</span>
+          </div>
+          <a class="sidebar-link" href="login.html">切换身份</a>
+        </section>
+      </aside>
+
+      <main class="workspace" id="overview">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Project Overview</p>
+            <h2>《江河人间》选角总览</h2>
+            <p class="topbar-copy">先看今日待办和关键进度，再进入角色、候选、试镜和阵容细节。</p>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button details-only" id="exportBtn" type="button" title="导出短名单" aria-label="导出短名单">
+              <span aria-hidden="true">⇩</span>
+            </button>
+            <button class="ghost-button details-only" id="newCandidateBtn" type="button">
+              <span aria-hidden="true">＋</span>
+              新增候选
+            </button>
+            <button class="primary-button" id="enterWorkspaceBtn" type="button" data-admin-open="workspace">
+              进入项目工作台
+            </button>
+          </div>
+        </header>
+
+        <section class="stats-grid expanded" id="adminStats" aria-label="关键数据"></section>
+
+        <section class="admin-home" id="adminHome">
+          <div class="home-grid">
+            <section class="work-module">
+              <div class="module-heading">
+                <div>
+                  <p class="eyebrow">Today</p>
+                  <h3>今日待办</h3>
+                </div>
+              </div>
+              <div class="task-list compact" id="todayTasks"></div>
+            </section>
+
+            <section class="work-module">
+              <div class="module-heading">
+                <div>
+                  <p class="eyebrow">Progress</p>
+                  <h3>角色进度</h3>
+                </div>
+              </div>
+              <div class="progress-stack" id="roleProgress"></div>
+            </section>
+          </div>
+
+          <section class="quick-entry-grid" aria-label="核心模块入口">
+            <button class="quick-entry-card" type="button" data-admin-open="workspace">
+              <strong>项目工作台</strong>
+              <span>角色画像、候选匹配、候选档案和试镜推进。</span>
+            </button>
+            <button class="quick-entry-card" type="button" data-admin-open="candidatePool">
+              <strong>候选池</strong>
+              <span>按角色查看候选状态，推进到复试、备用或淘汰。</span>
+            </button>
+            <button class="quick-entry-card" type="button" data-admin-open="auditionManagement">
+              <strong>试镜管理</strong>
+              <span>排期、组合测试、提交记录和推进时间线。</span>
+            </button>
+            <button class="quick-entry-card" type="button" data-admin-open="castPlanPanel">
+              <strong>阵容方案</strong>
+              <span>对比方案 A/B/C 的预算、档期、关系和风险。</span>
+            </button>
+            <button class="quick-entry-card" type="button" data-admin-open="riskPanel">
+              <strong>风险管理</strong>
+              <span>集中查看档期、市场、沟通和合作风险。</span>
+            </button>
+            <button class="quick-entry-card" type="button" data-admin-open="reportPanel">
+              <strong>报告归档</strong>
+              <span>预览选角报告与项目复盘字段。</span>
+            </button>
+          </section>
+        </section>
+
+        <section class="work-module route-panel admin-detail project-detail" id="projectCenter">
+          <div class="module-heading">
+            <div>
+              <p class="eyebrow">Project Center</p>
+              <h3>项目中心</h3>
+            </div>
+            <span class="tag green">选角中</span>
+          </div>
+          <div class="project-summary-grid" id="projectSummary"></div>
+        </section>
+
+        <section class="control-strip admin-detail workspace-detail" aria-label="候选筛选">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="搜索演员、标签、城市、推荐理由或风险理由" autocomplete="off" />
+          </label>
+          <div class="segmented wide" aria-label="候选状态筛选">
+            <button class="active" type="button" data-status="all">全部</button>
+            <button type="button" data-status="系统推荐">系统推荐</button>
+            <button type="button" data-status="初筛">初筛</button>
+            <button type="button" data-status="待试镜">待试镜</button>
+            <button type="button" data-status="已提交">已提交</button>
+            <button type="button" data-status="待评价">待评价</button>
+            <button type="button" data-status="复试">复试</button>
+            <button type="button" data-status="已定">已定</button>
+            <button type="button" data-status="备用">备用</button>
+            <button type="button" data-status="淘汰">淘汰</button>
+          </div>
+        </section>
+
+        <div class="work-grid admin-detail workspace-detail">
+          <section class="work-module role-module" id="roles" aria-labelledby="roleTitle">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Role Brief</p>
+                <h3 id="roleTitle">角色需求</h3>
+              </div>
+            </div>
+            <div class="role-tabs" id="roleTabs" role="tablist" aria-label="角色列表"></div>
+            <div class="role-detail" id="roleDetail"></div>
+          </section>
+
+          <section class="work-module talent-module" id="talents" aria-labelledby="talentTitle">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Explainable Match</p>
+                <h3 id="talentTitle">可解释演员匹配</h3>
+              </div>
+              <span class="module-count" id="resultCount">0 人</span>
+            </div>
+            <div class="talent-list" id="talentList" aria-live="polite"></div>
+          </section>
+
+          <section class="work-module profile-module" aria-labelledby="profileTitle">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Candidate File</p>
+                <h3 id="profileTitle">候选档案</h3>
+              </div>
+            </div>
+            <div class="profile-tabs" id="profileTabs" role="tablist" aria-label="候选档案分栏"></div>
+            <div class="profile-panel" id="profilePanel"></div>
+          </section>
+        </div>
+
+        <section class="work-module lower-module admin-detail workspace-detail audition-detail" id="auditionManagement">
+          <div class="module-heading">
+            <div>
+              <p class="eyebrow">Workflow Tabs</p>
+              <h3>试镜、组合与推进</h3>
+            </div>
+            <div class="tab-strip" id="bottomTabs">
+              <button class="active" type="button" data-bottom-tab="schedule">试镜排期</button>
+              <button type="button" data-bottom-tab="combinations">组合测试</button>
+              <button type="button" data-bottom-tab="timeline">推进记录</button>
+            </div>
+          </div>
+          <div class="lower-panel" id="lowerPanel"></div>
+        </section>
+
+        <section class="decision-grid admin-detail decision-detail">
+          <section class="work-module" id="candidatePool">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Candidate Pool</p>
+                <h3>候选池</h3>
+              </div>
+            </div>
+            <div id="candidatePoolList"></div>
+          </section>
+
+          <section class="work-module" id="combinationPanel">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Combination Test</p>
+                <h3>组合测试</h3>
+              </div>
+              <button class="ghost-button" type="button" id="addCombinationBtn">新增组合</button>
+            </div>
+            <div id="combinationList"></div>
+          </section>
+
+          <section class="work-module" id="castPlanPanel">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Cast Plans</p>
+                <h3>阵容方案</h3>
+              </div>
+              <button class="ghost-button" type="button" id="addCastPlanBtn">新增方案</button>
+            </div>
+            <div id="castPlanList"></div>
+          </section>
+
+          <section class="work-module" id="riskPanel">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Risk Control</p>
+                <h3>风险管理</h3>
+              </div>
+            </div>
+            <div id="riskList"></div>
+          </section>
+        </section>
+
+        <section class="lower-grid admin-detail report-detail">
+          <section class="work-module" id="reportPanel">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Report Preview</p>
+                <h3>选角报告</h3>
+              </div>
+              <span class="tag">Word / PDF / 内部链接</span>
+            </div>
+            <div class="report-preview" id="reportPreview"></div>
+          </section>
+
+          <section class="work-module" id="archivePanel">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Project Archive</p>
+                <h3>项目归档复盘</h3>
+              </div>
+            </div>
+            <div class="archive-preview" id="archivePreview"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="dialog" id="candidateDialog">
+      <form id="candidateForm" method="dialog">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">New Candidate</p>
+            <h3>新增候选演员</h3>
+          </div>
+          <button class="icon-button small" type="button" data-close="candidateDialog" aria-label="关闭">×</button>
+        </div>
+        <div class="form-grid">
+          <label>姓名<input name="name" required placeholder="例如：许知宁" /></label>
+          <label>年龄<input name="age" type="number" min="16" max="80" required placeholder="32" /></label>
+          <label>城市<input name="city" required placeholder="北京" /></label>
+          <label>经纪状态<input name="agency" required placeholder="经纪公司 / 自由演员" /></label>
+          <label class="wide">关键词<input name="tags" placeholder="台词稳, 现实质感, 会方言" /></label>
+        </div>
+        <div class="dialog-actions">
+          <button class="ghost-button" type="button" data-close="candidateDialog">取消</button>
+          <button class="primary-button" type="submit">保存并加入候选池</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="dialog" id="auditionDialog">
+      <form id="auditionForm" method="dialog">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">Schedule</p>
+            <h3>安排试镜</h3>
+          </div>
+          <button class="icon-button small" type="button" data-close="auditionDialog" aria-label="关闭">×</button>
+        </div>
+        <input type="hidden" name="candidateId" />
+        <div class="audition-target" id="auditionTarget"></div>
+        <div class="form-grid">
+          <label>日期<input name="date" type="date" required /></label>
+          <label>时间<input name="time" type="time" required /></label>
+          <label>试镜类型<input name="type" required placeholder="自录初试 / 现场试镜" /></label>
+          <label>地点<input name="location" required placeholder="A 棚 / 线上会议" /></label>
+          <label class="wide">试镜重点<input name="requirement" required placeholder="台词情绪层次、人物转折、方言自然度" /></label>
+        </div>
+        <div class="dialog-actions">
+          <button class="ghost-button" type="button" data-close="auditionDialog">取消</button>
+          <button class="primary-button" type="submit">确认排期</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
